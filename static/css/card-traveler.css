@@ -11,13 +11,13 @@
     font-weight: 900;
   }
   
-  .card-traveler:hover {
+  /* .card-traveler:hover {
     border-radius: 15px;
     cursor: pointer;
     transform: scale(1.2);
     box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
     background: rgb(103, 151, 255);
-  }
+  } */
   
   .first-content {
     height: 100%;
@@ -30,10 +30,10 @@
     border-radius: 15px;
   }
   
-  .card-traveler:hover .first-content {
+  /* .card-traveler:hover .first-content {
     height: 0px;
     opacity: 0;
-  }
+  } */
   
   .second-content {
     height: 0%;
@@ -48,10 +48,10 @@
     transform: rotate(90deg) scale(-1);
   }
   
-  .card-traveler:hover .second-content {
+  /* .card-traveler:hover .second-content {
     opacity: 1;
     height: 100%;
     font-size: 1.8rem;
     transform: rotate(0deg);
-  }
+  } */
   
