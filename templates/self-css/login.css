@@ -1,0 +1,14 @@
+body{
+    background-color: #212121;
+    overflow: hidden;
+}
+.griddly{
+    height: 80vh;
+    display: grid;
+    place-items: center;
+}
+
+.logo{
+    width: 190px;
+    border-radius: 2em 1em;
+}

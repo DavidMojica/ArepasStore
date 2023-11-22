@@ -1,0 +1,36 @@
+
+.navbar-toggler{
+    background-color: #fff;
+}
+.sticky-header{
+    top: 0;
+    position: sticky;
+    z-index: 10;
+}
+.navbar{
+    position: fixed;
+}
+
+.div_top{
+    height: 100vh;
+}
+
+.griddle{
+    display: grid;
+    place-items: center;
+}
+.quarry{
+    margin-top: 10vh;
+    display: grid;
+    grid-template-rows: 1fr .85fr .3fr;
+    place-items: center;
+    padding: 3em;
+}
+
+.logo{
+    width: 350px;
+    border-radius: 2em 1em;
+}
+.btn_star{
+    width: 100%;
+}
