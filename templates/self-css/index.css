@@ -1,0 +1,21 @@
+:root{
+    --colombia-yellow: #F7C700;
+    --colombia-blue: #002E83;
+    --colombia-red: #C20F2D;
+}
+
+.line-1{
+    text-align: center;
+    background-color: var(--colombia-yellow);
+    min-height: 50px;
+}
+
+.line-2{
+    background-color: var(--colombia-blue);
+    min-height: 25px;
+}
+
+.line-3{
+    background-color: var(--colombia-red);
+    min-height: 25px;
+}
