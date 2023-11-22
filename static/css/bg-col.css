@@ -1,7 +1,7 @@
 .bg-blurry{
-    background: linear-gradient(-65deg, #F7C700, #F7C700, #002E83, #C20F2D);
+    background: url(https://static.vecteezy.com/system/resources/previews/001/948/406/non_2x/wood-table-top-for-display-with-blurred-restaurant-background-free-photo.jpg);
     animation: gradient 30s ease infinite;  /*<-------Duration of the "Day"*/
-    background-size: 400% 400%;
+    background-size: 120% 120%;
     backdrop-filter: blur(5px);
 }
 

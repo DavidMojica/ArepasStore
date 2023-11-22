@@ -64,39 +64,21 @@ include("scriptsPHP/PDOconn.php");
             <section class="griddle">
                 <div class="row quarry">
                     <img src="extras/logos/logo.png" alt="Sabor Caro" class="logo">
-                    <hr class="hr hr-blurry">
-                    <h1>AREPA COLOMBIANA</h1>
+                    <h1 class="col-white text-bold">AREPAS CON TODO!</h1>
+                    <button>HAZ TU PEDIDO</button>
                 </div>
             </section>
         </div>
     </div>
-
-    <main class="">
-        <!-- Swipper -->
-        
-
-        <div class="row gap-3 justify-content-center col-xl-4">
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <h3>Agenda tu pedido!</h3>
-            </div>
-            <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                <button>Registrarse</button>
-            </div>
-            <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                <button>Iniciar sesión</button>
-            </div>
-        </div>
-    </main>
-
-    <footer class="py-3 my-4">
+    
+    <footer class="py-3 bg-dark">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Menú</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Carrito</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pedidos</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Menú</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrito</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pedidos</a></li>
         </ul>
-        <p class="text-center text-muted">© 2023 Sabor Caro</p>
+        <p class="text-center text-light">© 2023 Sabor Caro</p>
     </footer>
 </body>
-
 </html>
