@@ -1,8 +1,3 @@
-.bg-grid {
-    --s: 150px; /* control the size */
-  
-    background:
-      linear-gradient(135deg,#0000 18.75%,#5E412F 0 31.25%,#0000 0),
-      repeating-linear-gradient(45deg,#5E412F -6.25% 6.25%,#FCEBB6 0 18.75%);
-    background-size: var(--s) var(--s); 
-  }
+.bg-blurry{
+    
+}

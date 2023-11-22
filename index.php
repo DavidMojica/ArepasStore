@@ -6,6 +6,7 @@ include("scriptsPHP/PDOconn.php");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,51 +19,53 @@ include("scriptsPHP/PDOconn.php");
     <link rel="stylesheet" href="static/css/background-grid.css">
     <link rel="stylesheet" href="templates/self-css/general.css">
     <link rel="stylesheet" href="templates/self-css/index.css">
-    
+
     <title>Sabor Caro | Inicio</title>
 </head>
 
-<body class="bg-grid">
-    <div class="div_top">
+<body>
+    <div class="sticky-header">
         <div class="line-1">
             <p class="col-white text-bold">Precios baratos, sabor Caro y Colombiano <i class="fa fa-diamond"></i></p>
         </div>
         <div class="line-2"></div>
         <div class="line-3"></div>
-        <nav class="navbar navbar-expand-lg navbar_d2">
-            <div class="container cont_top">
-                <a href="#" class="logo-cont navbar-brand">
-                    <img src="extras/logos/logo.png" alt="Arepas con sabor caro" class="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item m-1">
-                            <a href="templates/menu.php" class="nav-link px-2 text-muted">Menu</a>
-                        </li>
-                        <?php  #Comprobar que la sesión esté iniciada para mostar una cosa o otra.
-                        session_start();
-                        if (!isset($_SESSION['username'])) {
-                        ?>
-                        <li class="nav-item m-1">
-                            <a href="templates/login.php"><button>Iniciar sesión</button></a>
-                        </li>
-                        <?php
-                        } else {
-                        ?>
-                        <li class="nav-item m-1">
-                            <a href="templates/login.php"><button>Menú</button></a>
-                        </li>
-                        <li class="nav-item m-1">
-                            <a href="templates/login.php"><button>Cerrar sesión</button></a>
-                        </li>
-                        <?php } ?>
-                    </ul>
+    </div>
+
+    <div class="bg-blurry">
+        <div class="div_top">
+            <nav class="navbar navbar_d2">
+                <div class="container cont_top">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <?php
+                            session_start();
+                            if (!isset($_SESSION['username'])) {
+                            ?>
+                                <li class="nav-item m-1">
+                                    <a href="templates/login.php"><button class="btn btn-primary">Iniciar sesión</button></a>
+                                </li>
+                            <?php
+                            } else {
+                            ?>
+                                <li class="nav-item m-1">
+                                    <a href="templates/login.php"><button class="btn btn-danger">Cerrar sesión</button></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+
+
+        <section>
+
+
+        </section>
     </div>
 
     <main class="">
@@ -94,4 +97,5 @@ include("scriptsPHP/PDOconn.php");
         <p class="text-center text-muted">© 2023 Sabor Caro</p>
     </footer>
 </body>
+
 </html>
