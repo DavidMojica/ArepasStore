@@ -8,12 +8,44 @@ const register_form = document.getElementById('register_form');
 const i_username = document.getElementById('i_username');
 const i_password = document.getElementById('i_password');
 const msg  = document.getElementById('msg');
+const msg_r  = document.getElementById('msg_r');
+const r_username = document.getElementById('r_username');
+const r_password1 = document.getElementById('r_password1');
+const r_password2 = document.getElementById('r_password2');
+
+
+register_form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const user_text = r_username.value.trim();
+    const pass_text = r_password1.value.trim();
+    const pass2_text = r_password2.value.trim();
+    let error = "";
+    let ban = true;
+
+    if (user_text === "" || pass_text === "" || pass2_text === "") {
+        error += "Algún dato está vacío";
+        ban = false;
+    }
+
+    if(pass_text !== pass2_text){
+        error += "Las contraseñas no coinciden";
+        ban = false;
+    }
+    if (ban) {
+        mandar_al_servidor(user_text, pass_text, 2);
+    }
+    else {
+        msg.textContent = error;
+    }
+});
+
 
 login_form.addEventListener('submit', function(e){
     e.preventDefault();
 
     const user_text = i_username.value.trim();
-    const password_text = i_password.value.trim();
+    const pass_text = i_password.value.trim();
     let error = "";
     let ban = true;
 

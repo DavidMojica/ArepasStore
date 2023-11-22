@@ -41,6 +41,7 @@
                     <input type="text" name="r_username" id="r_username" placeholder="Nombre de usuario">
                     <input type="password" name="r_password1" id="r_password1" placeholder="Contraseña">
                     <input type="password" name="r_password2" id="r_password2" placeholder="Conformar contraseña">
+                    <p id="msg_r"></p>
                     <button type="submit" name="r">Ingresar</button> 
                 </form> 
             </div>
