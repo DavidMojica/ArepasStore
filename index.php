@@ -14,6 +14,10 @@ include("scriptsPHP/PDOconn.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- fa icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/general.css">
+    
     <title>Sabor Caro | Inicio</title>
 </head>
 
@@ -25,7 +29,7 @@ include("scriptsPHP/PDOconn.php");
         <nav class="navbar navbar-expand-lg navbar_d2">
             <div class="container cont_top">
                 <a href="#" class="logo-cont navbar-brand">
-                    <img src="extras/logos/logo.png" alt="Arepas con sabor caro" class="logo">
+                    <img src="extras/logos/arepa.png" alt="Arepas con sabor caro" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -76,15 +80,12 @@ include("scriptsPHP/PDOconn.php");
 
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#">Home</a></li>
-            <li class="nav-item"><a href="#">Menú</a></li>
-            <li class="nav-item"><a href="#">Carrito</a></li>
-            <li class="nav-item"><a href="#">Pedidos</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Menú</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Carrito</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pedidos</a></li>
         </ul>
         <p class="text-center text-muted">© 2023 Sabor Caro</p>
-
     </footer>
-
 </body>
-
 </html>
