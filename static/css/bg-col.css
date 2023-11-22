@@ -1,0 +1,18 @@
+.bg-blurry{
+    background: linear-gradient(-65deg, #F7C700, #F7C700, #002E83, #C20F2D);
+    animation: gradient 30s ease infinite;  /*<-------Duration of the "Day"*/
+    background-size: 400% 400%;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

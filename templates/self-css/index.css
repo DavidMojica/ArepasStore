@@ -3,15 +3,20 @@
     --colombia-blue: #002E83;
     --colombia-red: #C20F2D;
 }
+.navbar-toggler{
+    background-color: #fff;
+}
 .sticky-header{
     top: 0;
     position: sticky;
     z-index: 10;
 }
+.navbar{
+    position: fixed;
+}
 
 .div_top{
     height: 100vh;
-    
 }
 
 .line-1{
@@ -28,4 +33,14 @@
 .line-3{
     background-color: var(--colombia-red);
     min-height: 25px;
+}
+
+.griddle{
+    display: grid;
+    place-items: center;
+}
+.quarry{
+    margin-top: 10vh;
+    border: 1px solid red;
+    background-color: rgba(255, 255, 255, 0.4) ;
 }

@@ -16,7 +16,7 @@ include("scriptsPHP/PDOconn.php");
     <!-- fa icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="static/css/background-grid.css">
+    <link rel="stylesheet" href="static/css/bg-col.css">
     <link rel="stylesheet" href="templates/self-css/general.css">
     <link rel="stylesheet" href="templates/self-css/index.css">
 
@@ -59,20 +59,21 @@ include("scriptsPHP/PDOconn.php");
                     </div>
                 </div>
             </nav>
+
+
+            <section class="griddle">
+                <div class="row quarry">
+                    <img src="extras/logos/logo.png" alt="Sabor Caro" class="logo">
+                    <hr class="hr hr-blurry">
+                    <h1>AREPA COLOMBIANA</h1>
+                </div>
+            </section>
         </div>
-
-
-        <section>
-
-
-        </section>
     </div>
 
     <main class="">
         <!-- Swipper -->
-        <div class="giant_logo col-xl-8">
-            <img src="extras/logos/logo.png" alt="Sabor Caro">
-        </div>
+        
 
         <div class="row gap-3 justify-content-center col-xl-4">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
