@@ -24,17 +24,18 @@
         <div class="card-traveler" id="l_card">
             <div class="first-content" id="first-content">
                 <h2>Iniciar Sesion</h2>
-                <form action="">
+                <form action="" id="login_form">
                     <img src="../extras/logos/logo.png" alt="" class="logo"> <br>
                     <input type="text" name="i_username" id="i_username" placeholder="Nombre de usuario"> <br>
                     <input type="password" name="i_password" id="i_password" placeholder="Contraseña"> <br>
+                    <p id="msg"></p>
                     <button type="submit" name="i">Ingresar</button> 
                 </form>
                 <p>¿No tienes cuenta? <b id="b_change">Registrate aquí!</b></p>
             </div>
             <div class="second-content" id="second-content">
                 <h2>Registrarse</h2>
-                <form action="">
+                <form action="" id="register_form">
                     <img src="../extras/logos/logo.png" alt="" class="logo"> <br>
                     <p>¿Ya tienes cuenta? <b id="a_change">ingresa aquí</b></sp>
                     <input type="text" name="r_username" id="r_username" placeholder="Nombre de usuario">
