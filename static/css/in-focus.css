@@ -1,4 +1,4 @@
-.i-focus {
+.in-focus {
     border-radius: 10px;
     outline: 2px solid #FEBF00;
     border: 0;
@@ -9,7 +9,7 @@
     transition: 0.25s;
   }
   
-  .i-focus:focus {
+  .in-focus:focus {
     outline-offset: 5px;
     background-color: #fff
   }
