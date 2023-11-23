@@ -23,11 +23,17 @@
     height: 100%;
     width: 100%;
     transition: all 0.4s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     opacity: 1;
-    border-radius: 15px;
+    border-radius: 2em;
+    grid-template-columns: 1fr; 
+    display: grid; 
+    grid-template-rows: 1.6fr 1.7fr 0.8fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "."
+      "."
+      ".";
+  place-items: center;
   }
   
   /* .card-traveler:hover .first-content {
@@ -39,9 +45,6 @@
     height: 0%;
     width: 100%;
     opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 15px;
     transition: all 0.4s;
     font-size: 0px;

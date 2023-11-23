@@ -12,3 +12,8 @@ body{
     width: 190px;
     border-radius: 2em 1em;
 }
+
+#login_form{
+    display: grid;
+    place-items: center;
+}
