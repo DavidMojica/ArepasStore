@@ -3,6 +3,18 @@
     width: 350px;
     height: 430px;
   }
+
+  .back-food-content img{
+    max-width: 250px;
+    max-height: 300px;
+    border-radius: 3em;
+  }
+
+  .form-food{
+    position: absolute;
+    margin-top: 10%;
+    z-index: 100;
+  }
   
   .content-food {
     width: 100%;
