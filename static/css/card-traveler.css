@@ -27,13 +27,14 @@
     border-radius: 2em;
     grid-template-columns: 1fr; 
     display: grid; 
-    grid-template-rows: 1.6fr 1.7fr 0.8fr; 
+    grid-template-rows: .8fr 2fr 0.8fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "."
       "."
       ".";
   place-items: center;
+  z-index: 10;
   }
   
   /* .card-traveler:hover .first-content {

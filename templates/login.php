@@ -23,15 +23,15 @@
     <div class="griddly">
         <div class="card-traveler" id="l_card">
             <div class="first-content" id="first-content">
-                <h2>Iniciar Sesion</h2>
+                <h2 class="col-white">Iniciar Sesion</h2>
                 <form action="" id="login_form">
-                    <img src="../extras/logos/logo.png" alt="" class="logo"> <br>
-                    <input type="text" name="i_username" id="i_username" placeholder="Nombre de usuario"> <br>
-                    <input type="password" name="i_password" id="i_password" placeholder="Contraseña"> <br>
-                    <p id="msg"></p>
+                    <img src="../extras/logos/logo.png" alt="" class="logo"> 
+                    <input type="text" name="i_username" id="i_username" placeholder="Nombre de usuario"> 
+                    <input type="password" name="i_password" id="i_password" placeholder="Contraseña"> 
+                    <p id="msg" class="small"></p>
                     <button type="submit" name="i">Ingresar</button> 
                 </form>
-                <p>¿No tienes cuenta? <b id="b_change">Registrate aquí!</b></p>
+                <p class="small"><b id="b_change" class="col-white">Registrate aquí!</b></p>
             </div>
             <div class="second-content" id="second-content">
                 <h2>Registrarse</h2>

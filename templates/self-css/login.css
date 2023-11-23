@@ -15,5 +15,11 @@ body{
 
 #login_form{
     display: grid;
+    gap: 5px;
     place-items: center;
+}
+
+#b_change{
+    cursor: pointer;
+    z-index: 10;
 }
