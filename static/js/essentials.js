@@ -11,7 +11,7 @@ function mandar_al_servidor(user, pass, node){
             let jsonString = JSON.stringify(response);
             let data       = JSON.parse(jsonString);
             if(data.success){
-                window.location.href = "../templates/admin.php";
+                window.location.href = data.reboot;
             }
             else{
                 msg.textContent = data.mensaje;
