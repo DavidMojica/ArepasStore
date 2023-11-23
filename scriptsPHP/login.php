@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             }
             else if(count($result) == 0)
                 #No se devolvieron filas.
-                $queryError = $pass_hash;
+                $queryError = "Usuario no encontrado.";
             else if(count($result) <= 2)
                 #Se devolvieron múltiples files.
                 $queryError = "Multiples coincidencias. Contacte con la administración.";      
