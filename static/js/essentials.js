@@ -16,7 +16,9 @@ function mandar_al_servidor(user, pass, node, msg){
             else{
                 console.log(data)
                 msg.textContent = data.mensaje;
-                setTimeout(clearSubtx, 3000);
+                setTimeout(function() {
+                    clearSubtx(msg);
+                }, 3000);
             }
         },error: function(jqXHR, textStatus, errorThrown){
             // Error en la solicitud AJAX

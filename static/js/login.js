@@ -21,5 +21,8 @@ login_form.addEventListener('submit', function(e){
     }
     else {
         msg.textContent = error;
+        setTimeout(function() {
+            clearSubtx(msg);
+        }, 3000);
     }
 });
