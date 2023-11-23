@@ -1,4 +1,4 @@
-function mandar_al_servidor(user, pass, node){
+function mandar_al_servidor(user, pass, node, msg){
     $.ajax({
         url: '../scriptsPHP/login.php',
         type: 'POST',
@@ -11,10 +11,14 @@ function mandar_al_servidor(user, pass, node){
             let jsonString = JSON.stringify(response);
             let data       = JSON.parse(jsonString);
             if(data.success){
-                window.location.href = "../templates/admin.php";
+                window.location.href = data.reboot;
             }
             else{
+                console.log(data)
                 msg.textContent = data.mensaje;
+                setTimeout(function() {
+                    clearSubtx(msg);
+                }, 3000);
             }
         },error: function(jqXHR, textStatus, errorThrown){
             // Error en la solicitud AJAX
@@ -25,3 +29,8 @@ function mandar_al_servidor(user, pass, node){
         }
     });
 };
+
+
+function clearSubtx(msg){
+    msg.textContent = "";
+}

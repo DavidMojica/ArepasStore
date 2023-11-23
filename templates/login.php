@@ -19,6 +19,8 @@
 
     <script src="../static/js/essentials.js" defer></script>
     <script src="../static/js/login.js" defer></script>    
+    <link rel="shortcut icon" href="../extras/logos/arepa.png" type="image/x-icon">
+
     <title>Sabor Caro | Login</title>
 </head>
 <body class="bg-dotted">
