@@ -1,4 +1,4 @@
-function mandar_al_servidor(user, pass, node){
+function mandar_al_servidor(user, pass, node, msg){
     $.ajax({
         url: '../scriptsPHP/login.php',
         type: 'POST',
@@ -14,7 +14,9 @@ function mandar_al_servidor(user, pass, node){
                 window.location.href = data.reboot;
             }
             else{
+                console.log(data)
                 msg.textContent = data.mensaje;
+                setTimeout(clearSubtx, 3000);
             }
         },error: function(jqXHR, textStatus, errorThrown){
             // Error en la solicitud AJAX
@@ -25,3 +27,8 @@ function mandar_al_servidor(user, pass, node){
         }
     });
 };
+
+
+function clearSubtx(msg){
+    msg.textContent = "";
+}

@@ -17,7 +17,7 @@ login_form.addEventListener('submit', function(e){
     }
 
     if (ban) {
-        mandar_al_servidor(user_text, pass_text, 1);
+        mandar_al_servidor(user_text, pass_text, 1, msg);
     }
     else {
         msg.textContent = error;

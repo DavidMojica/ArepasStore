@@ -64,7 +64,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 return_response(true,'Usuario creado', "../templates/login.php");
             } 
             catch (PDOException $e) {
-                return_Response(false, $e, "../templates/register.php");
+                if ($e->getCode() == '23000') {
+                    return_Response(false, "Ya existe el nombre de usuario", "../templates/register.php");
+                }
+                else{
+                    return_Response(false, "Error, vuelva a intentarlo", "../templates/register.php");
+                }
             }
             break;
         default:

@@ -16,9 +16,11 @@
     <link rel="stylesheet" href="../static/css/in-focus.css">
     <link rel="stylesheet" href="../static/css/btn_type_A.css">
     <link rel="stylesheet" href="../static/css/form_slashing.css">
+    <link rel="shortcut icon" href="../extras/logos/arepa.png" type="image/x-icon">
 
     <script src="../static/js/essentials.js" defer></script>
     <script src="../static/js/register.js" defer></script>    
+
     <title>Sabor Caro | Register</title>
 </head>
 <body class="bg-dotted">

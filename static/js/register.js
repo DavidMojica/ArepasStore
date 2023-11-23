@@ -23,7 +23,7 @@ register_form.addEventListener('submit', function(e){
             ban = false;
         }
         if (ban) {
-            mandar_al_servidor(user_text, pass_text, 2);
+            mandar_al_servidor(user_text, pass_text, 2, msg);
         }
         else {
             msg.textContent = error;
