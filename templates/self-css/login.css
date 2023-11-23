@@ -1,25 +1,46 @@
-body{
-    background-color: #212121;
-    overflow: hidden;
+.logo_form{
+    display: none;
 }
-.griddly{
-    height: 80vh;
+main{
     display: grid;
     place-items: center;
+    height: 85.7vh;
 }
-
+#loginForm{
+    height: 45vh;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows:.001fr 1.8fr 0.9fr 0.9fr 0.8fr 1.6fr; 
+    gap: 0px 0px; 
+    place-items: center;
+}
 .logo{
-    width: 190px;
-    border-radius: 2em 1em;
+    width: 150px;
+    border-radius: 1em 2em;
 }
 
-#login_form{
-    display: grid;
-    gap: 5px;
-    place-items: center;
-}
+@media (max-width: 768px) {
+    .navbar{
+        display: none;
+    }
+    
+    .form-container{
+        height: 100vh;
+        width: 99vw;
+    }
+    #loginForm{   
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1.9fr 0.9fr 0.8fr 0.7fr 1fr 1.7fr; 
+        gap: 0px 0px; 
+        height: 100%;
+        
+    }
+    .form-container .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 80%;
+      }
 
-#b_change{
-    cursor: pointer;
-    z-index: 10;
+      
 }
