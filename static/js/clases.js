@@ -1,9 +1,9 @@
 class Producto{
-    constructor(id, nombre, cantidad, precio){
+    constructor(id, nombre,precio, tipo){
         this.id = id;
         this.nombre = nombre;
-        this.cantidad = cantidad;
-        this.precio = precio
+        this.precio = precio;
+        this.tipo = tipo;
     }
 }
 

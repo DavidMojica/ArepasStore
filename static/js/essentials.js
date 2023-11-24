@@ -35,8 +35,6 @@ function clearSubtx(msg) {
     msg.textContent = "";
 }
 
-
-
 const arepas_grid = document.getElementById('arepas-grid');
 function displayProduct(product, imgRoute){
     //---------------> +++ <----------------//
@@ -106,7 +104,7 @@ function displayProduct(product, imgRoute){
     titleFoodP.setAttribute('class', 'title-food');
 
     const strong2 = document.createElement('strong');
-    strong2.textContent = product.precio;
+    strong2.textContent = `Precio por unidad: $${product.precio}`;
 
     titleFoodP.appendChild(strong2);
     titleFood.appendChild(titleFoodP);
