@@ -27,7 +27,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- fa icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../static/css/bg-col.css">
+    <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <link rel="stylesheet" href="../static/css/btn-star.css">
     <link rel="stylesheet" href="../static/css/card-food.css">
     <link rel="stylesheet" href="self-css/general.css">
@@ -41,7 +41,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Sabor Caro | Inicio</title>
 </head>
 
-<body>
+<body class="bg-dotted">
     <div class="sticky-header">
         <div class="line-1">
             <p class="col-white text-bold">Precios baratos, sabor Caro y Colombiano <i class="fa fa-diamond"></i></p>
@@ -59,10 +59,10 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link px-2">Menú</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link px-2">Carrito</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link px-2">Pedidos</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Menú</a></li>
+                            <li class="nav-item"><a href="cart.php" class="nav-link px-2 text-light">Carrito</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pedidos</a></li>
                             <li class="nav-item m-1">
                                 <a href="templates/login.php"><button class="btn btn-danger">Cerrar sesión</button></a>
                             </li>
@@ -74,7 +74,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     <main class="">
-        <h2>Arepas</h2>
+        <h2 class="col-white text-bold">Arepas</h2>
         <div class="arepas-grid" id="arepas-grid">
         
         </div>
