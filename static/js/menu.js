@@ -1,4 +1,6 @@
 const carrito = new Carrito();
+var productos = [];
+
 
 function getProducts(action) {
     return new Promise((resolve, reject) => {
@@ -38,7 +40,7 @@ function getProducts(action) {
 
 async function loadProducts() {
     try {
-        const productos = await getProducts(1);
+        productos = await getProducts(1);
         console.log(productos);
         for (let p of productos) {
             displayProduct(p, "../extras/resources/arepa-carne.jpg");
@@ -47,9 +49,13 @@ async function loadProducts() {
         console.error(error);
     }
 }
-
 loadProducts();
 
+function agregarAlCarro(id){
+    carrito.addProduct(productos.find(objeto => objeto.id === id));
+    console.log(carrito)
+
+}
 
 
 
