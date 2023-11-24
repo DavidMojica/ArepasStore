@@ -41,6 +41,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="self-css/menu.css">
     <link rel="shortcut icon" href="../extras/logos/arepa.png" type="image/x-icon">
     <!-- custom JS -->
+    <script src="../static/js/clases.js" defer></script>
     <script src="../static/js/menu.js" defer></script>
 
     <title>Sabor Caro | Inicio</title>
@@ -120,7 +121,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <input type="number" name="cantidad" value="1" class="form-control" min="1" max="10">
                                     <input type="hidden" name="id" value="' . htmlspecialchars($arepa['id']) . '">
                                     <input type="hidden" name="tipo_arepa" value="' . htmlspecialchars($arepa['id_tipo']) . '">
-                                    <button type="submit" class="btn btn-success btn-agregar-carrito" name="agrega_al_carrito">Agregar al carrito</button>
+                                    <button type="submit" class="btn btn-success btn-agregar-carrito" name="agregar_al_carrito">Agregar al carrito</button>
                                 </form>
                             </div>
                         </div>

@@ -1,15 +1,18 @@
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregar_al_carrito'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agrega_al_carrito'])) {
     $producto_id = $_POST['id'];
     $cantidad = $_POST['cantidad'];
 
+    // Aquí puedes agregar la lógica necesaria para manejar el producto, como almacenarlo en el carrito.
+
+    // Ejemplo básico de almacenamiento en la sesión
     $producto = array(
         'id' => $producto_id,
         'cantidad' => $cantidad,
-        'precio' => $_POST['precio'],
-        'tipo_arepa' => $_POST['tipo_arepa'],
+        'nombre' => $_POST['nombre'],
+        'precio' => $_POST['precio']
     );
 
     $_SESSION['carrito'][] = $producto;

@@ -34,3 +34,18 @@ function mandar_al_servidor(user, pass, node, msg){
 function clearSubtx(msg){
     msg.textContent = "";
 }
+
+function getProducts(action){
+    $.ajax({
+        url: '../scriptsPHP/getProducts.php',
+        type: 'POST',
+        data:{
+            action: action
+        },
+        success: function(response){
+            let jsonString = JSON.stringify(response);
+            let data       = JSON.parse(jsonString);
+        }
+    });
+
+}
