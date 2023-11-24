@@ -35,7 +35,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="shortcut icon" href="../extras/logos/arepa.png" type="image/x-icon">
     <!-- custom JS -->
     <script src="../static/js/essentials.js" defer></script>
-    <script src="../static/js/clases.js" defer></script>
+    <script src="../static/js/clases.js"></script>
     <script src="../static/js/menu.js" defer></script>
 
     <title>Sabor Caro | Inicio</title>
@@ -74,61 +74,10 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     <main class="">
-    <h2>Arepas</h2>
-    <div class="arepas-grid" id="arepas-grid">
-    <?php
-        foreach ($arepas as $arepa) {
-            echo '<div class="card-food">
-                    <div class="content-food">
-                        <div class="back-food">
-                            <div class="back-food-content">
-                                <img src="../extras/resources/arepa-carne.jpg" alt="comida" class="prod-img">
-                                <strong>' . htmlspecialchars($arepa['nombre']) . '</strong>
-                            </div>
-                        </div>
-                        <div class="front-food">
-                            <div class="img-food">
-                                <div class="circle-food"></div>
-                                <div class="circle-food" id="right"></div>
-                                <div class="circle-food" id="bottom"></div>
-                            </div>
-                            <div class="front-content">
-                                <small class="badge">' . htmlspecialchars($arepa['nombre']) . '</small>
-                                <div class="description-food">
-                                    <div class="title-food">
-                                        <p class="title-food">
-                                            <strong>$' . number_format($arepa['precio'], 2) . '</strong>
-                                        </p>
-                                        <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                                            <g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997">
-                                                <g transform="scale(8,8)">
-                                                    <path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path>
-                                                </g>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <p class="card-food-footer">
-                                        30 Mins &nbsp; | &nbsp; Disponible
-                                    </p>
-                                </div>
-                                <form action="" class="form-food">
-                                    <input type="number" name="cantidad" value="1" class="form-control" min="1" max="10">
-                                    <input type="hidden" name="id" value="' . htmlspecialchars($arepa['id']) . '">
-                                    <input type="hidden" name="tipo_arepa" value="' . htmlspecialchars($arepa['id_tipo']) . '">
-                                    <button type="submit" class="btn btn-success btn-agregar-carrito" name="agregar_al_carrito">Agregar al carrito</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
-        }
-        ?>
-    </div>
+        <h2>Arepas</h2>
+        <div class="arepas-grid" id="arepas-grid">
         
-        
-        
-
-
+        </div>
     </main>
 
     <footer class="py-3 bg-dark">
