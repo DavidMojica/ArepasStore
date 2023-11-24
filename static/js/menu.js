@@ -51,10 +51,12 @@ async function loadProducts() {
 }
 loadProducts();
 
-function agregarAlCarro(id){
-    carrito.addProduct(productos.find(objeto => objeto.id === id));
-    console.log(carrito)
-
+function agregarAlCarro(id, cantidad){
+    const productoEncontrado = productos.find(objeto => objeto.id === id);
+    if (productoEncontrado) {
+        productoEncontrado.cantidad = parseInt(cantidad);
+        carrito.addProduct(productoEncontrado);
+    }
 }
 
 

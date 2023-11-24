@@ -61,7 +61,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <ul class="navbar-nav">
                             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
                             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Menú</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrito</a></li>
+                            <li class="nav-item"><a href="cart.php" class="nav-link px-2 text-light">Carrito</a></li>
                             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pedidos</a></li>
                             <li class="nav-item m-1">
                                 <a href="templates/login.php"><button class="btn btn-danger">Cerrar sesión</button></a>

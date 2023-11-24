@@ -20,6 +20,22 @@ class Carrito{
         } else {
             // Si el producto no está en el carrito, se añade
             this.productos[producto.id] = producto;
+            $.ajax({
+                url: '../scriptsPHP/agregar_carrito.php',
+                type: 'POST',
+                data: {
+                    id: producto.id,
+                    nombre: producto.nombre,
+                    precio: producto.precio,
+                    cantidad: producto.cantidad
+                },
+                success: function (response) {
+                    console.log('Producto agregado al carrito en el servidor:', response);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error('Error al agregar el producto al carrito en el servidor:', textStatus, errorThrown);
+                }
+            });
         }
     }
 

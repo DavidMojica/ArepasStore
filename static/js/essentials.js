@@ -164,7 +164,7 @@ function displayProduct(product, imgRoute){
     btnAgregarCarrito.className = 'btn btn-success';
     btnAgregarCarrito.textContent = 'Agregar al carrito';
     btnAgregarCarrito.addEventListener('click', function() {
-        agregarAlCarro(product.id); 
+        agregarAlCarro(product.id, inputCantidad.value); 
     });
 
     formFood.appendChild(inputCantidad);
