@@ -1,38 +1,6 @@
 const carrito = new Carrito();
+const productos = getProducts(1);
 
-$(document).ready(function() {
-    $(".form-food").submit(function(event) {
-        event.preventDefault();
-
-        var form = $(this);
-        var formData = form.serialize();
-
-        $.ajax({
-            type: "POST",
-            url: "../scriptsPHP/agregar_carrito.php",
-            data: formData,
-            dataType: "json",
-            success: function(response) {
-                if (response.mensaje === 'Producto agregado al carrito') {
-                    // Accede al objeto Carrito y agrega el producto
-                    carrito.addProduct({
-                        id: form.find('input[name="id"]').val(),
-                        nombre: form.find('input[name="nombre"]').val(),
-                        cantidad: parseInt(form.find('input[name="cantidad"]').val()),
-                        precio: parseFloat(form.find('input[name="precio"]').val())
-                    });
-
-                    console.log(carrito)
-                }
-
-                alert(response.mensaje);
-            },
-            error: function(error) {
-                console.error("Error en la solicitud AJAX", error);
-            }
-        });
-    });
-});
 
 
 

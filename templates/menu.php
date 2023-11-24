@@ -2,14 +2,7 @@
 <?php
 include("../scriptsPHP/essentials.php");
 include("../scriptsPHP/PDOconn.php");
-$tipo_arepas = 1;
 $tipo_adicion = 2;
-
-$query = "SELECT * FROM tbl_productos WHERE id_tipo = :tipo";
-$stmt = $pdo->prepare($query);
-$stmt->bindParam(":tipo", $tipo_arepas, PDO::PARAM_INT);
-$stmt->execute();
-$arepas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $query = "SELECT * FROM tbl_productos WHERE id_tipo = :tipo";
 $stmt = $pdo->prepare($query);
@@ -41,6 +34,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="self-css/menu.css">
     <link rel="shortcut icon" href="../extras/logos/arepa.png" type="image/x-icon">
     <!-- custom JS -->
+    <script src="../static/js/essentials.js" defer></script>
     <script src="../static/js/clases.js" defer></script>
     <script src="../static/js/menu.js" defer></script>
 

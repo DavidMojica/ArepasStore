@@ -8,5 +8,4 @@ function return_response($success, $mensaje, $route){
     exit($jsonResponse);
 }
 
-
 ?>
