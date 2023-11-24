@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregar_al_carrito'])
     $producto = array(
         'id' => $producto_id,
         'cantidad' => $cantidad,
-        'nombre' => $_POST['nombre'],
-        'precio' => $_POST['precio']
+        'precio' => $_POST['precio'],
+        'tipo_arepa' => $_POST['tipo_arepa'],
     );
 
     $_SESSION['carrito'][] = $producto;
