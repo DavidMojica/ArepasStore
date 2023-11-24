@@ -75,7 +75,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <main class="">
     <h2>Arepas</h2>
-    <div class="arepas-grid">
+    <div class="arepas-grid" id="arepas-grid">
     <?php
         foreach ($arepas as $arepa) {
             echo '<div class="card-food">

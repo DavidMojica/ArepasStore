@@ -66,6 +66,40 @@ function getProducts(action) {
     });
 }
 
-function displayProduct(product){
-    
+const arepas_grid = document.getElementById('arepas-grid');
+function displayProduct(product, imgRoute){
+    const cardFood = document.createElement('div');
+    cardFood.setAttribute('class', 'card-food');
+
+    const contentFood = document.createElement('div');
+    contentFood.setAttribute('class', 'content-food');
+
+    const backFood = document.createElement('div');
+    backFood.setAttribute('class', 'back-food');
+
+    const backFoodContent = document.createElement('div');
+    backFoodContent.setAttribute('class', 'back-food-content');
+
+    const img = document.createElement('img');
+    img.setAttribute('alt', product.nombre);
+    img.setAttribute('class', 'prod-img');
+    img.src = imgRoute;
+
+    const strong1 = document.createElement('strong');
+    strong1.textContent = product.nombre;
+
+    backFoodContent.appendChild(img);
+    backFoodContent.appendChild(strong1);
+    backFood.appendChild(backFoodContent);
+    contentFood.appendChild(backFood);
+    //---------------> +++ <----------------//
+
+    const frontFood = document.createElement('div');
+    frontFood.setAttribute('class', 'front-food');
+
+    const imgFood = document.createElement('div');
+    imgFood.setAttribute('class', 'img-food');
+
+
+
 }
