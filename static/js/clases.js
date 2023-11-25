@@ -27,7 +27,8 @@ class Carrito{
                     id: producto.id,
                     nombre: producto.nombre,
                     precio: producto.precio,
-                    cantidad: producto.cantidad
+                    cantidad: producto.cantidad,
+                    action: 1
                 },
                 success: function (response) {
                     console.log('Producto agregado al carrito en el servidor:', response);
@@ -43,6 +44,20 @@ class Carrito{
         if (this.productos[id]) {
             // Si el producto está en el carrito, se elimina
             delete this.productos[id];
+            $.ajax({
+                url: '../scriptsPHP/agregar_carrito.php',
+                type: 'POST',
+                data: {
+                    id: id,
+                    action: 2
+                },
+                success: function (response) {
+                    console.log('Producto agregado al carrito en el servidor:', response);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error('Error al agregar el producto al carrito en el servidor:', textStatus, errorThrown);
+                }
+            });
         }
     }
 }
