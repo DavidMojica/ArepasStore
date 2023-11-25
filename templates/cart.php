@@ -45,35 +45,7 @@
                 </tr>
             </thead>
             <tbody id="cartBody">
-            <?php
-            session_start();
-
-            if (isset($_SESSION['carrito']) && is_array($_SESSION['carrito'])) {
-                $productosEnCarrito = $_SESSION['carrito'];
-                $total = 0;
-
-                foreach ($productosEnCarrito as $producto) {
-                    echo 
-                        '<tr>
-                            <th scope="row">'. $producto['nombre']  .' </th>
-                            <td>'. $producto['cantidad'] .'</td>
-                            <td>'. $producto['precio'] .'</td>
-                            <td>'. $producto['cantidad'] * $producto['precio'] .'</td>
-                            <td><button class="btn btn-warning">Quitar producto</button></th></td>
-                        </tr>';
-                    $total += $producto['cantidad'] * $producto['precio'];
-                }
-                echo'<tr class="table-active">
-                <th scope="row">-</th>
-                <td>-</td>
-                <td>Total -></td>
-                <td>'.$total .'</td>
-                <td><button class="btn btn-success">Continuar al pago</button></th></td>
-                </tr>';
-            } else {
-                echo '<p>El carrito está vacío.</p>';
-            }
-            ?>
+                
             </tbody>
         </table>
         </div>
