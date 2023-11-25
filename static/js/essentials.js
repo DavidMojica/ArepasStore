@@ -163,9 +163,31 @@ function displayProduct(product, imgRoute){
     const btnAgregarCarrito = document.createElement('button');
     btnAgregarCarrito.className = 'btn btn-success';
     btnAgregarCarrito.textContent = 'Agregar al carrito';
-    btnAgregarCarrito.addEventListener('click', function() {
-        agregarAlCarro(product.id, inputCantidad.value); 
+
+    let banBac = true;
+    btnAgregarCarrito.addEventListener('click', function(e) {
+        if (banBac){
+            agregarAlCarro(product.id, inputCantidad.value); 
+            const btn = e.target;
+    
+            btn.classList.remove('btn-success');
+            btn.classList.add('btn-danger');
+            inputCantidad.disabled = true;
+        
+            btn.textContent = 'Quitar del carrito';
+            banBac = false;
+        } else {
+            const btn = e.target;
+            btn.classList.remove('btn-danger');
+            btn.classList.add('btn-success');
+            inputCantidad.disabled = false;
+            
+            quitarProducto(product.id);
+            btn.textContent = 'Agregar al carrito'
+            banBac = true;
+        }
     });
+    
 
     formFood.appendChild(inputCantidad);
     formFood.appendChild(btnAgregarCarrito);
