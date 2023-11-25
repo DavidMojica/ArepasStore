@@ -26,19 +26,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 echo json_encode(['error' => 'Faltan parámetros en la solicitud']);
             }
+            break;
 
         case 2:
             $id = $_POST['id'];
             if (is_array($_SESSION['carrito'])) {
                 foreach ($_SESSION['carrito'] as $key => $producto) {
                     if ($producto['id'] == $id) {
-                        // Remove the product from the cart
                         unset($_SESSION['carrito'][$key]);
-                        break; // Stop the loop after finding and removing the product
+                        break; 
                     }
                 }
             }
-            die();
+            break;
 
         case 3:
             $producto_id = $_POST['id'];
@@ -52,6 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                 }
             }
+            break;
+        default:
+            break;
     }
 } else {
     echo json_encode(['error' => 'Error en la solicitud']);

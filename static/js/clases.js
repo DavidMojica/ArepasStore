@@ -47,7 +47,7 @@ class Carrito{
                     console.log('Producto agregado al carrito en el servidor:', response);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    console.error('Error al agregar el producto al carrito en el servidor:', textStatus, errorThrown);
+                    console.error('Error al agregar el producto al carrito en el servidor:',jqXHR, textStatus, errorThrown);
                 }
             });
         }

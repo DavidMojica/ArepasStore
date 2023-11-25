@@ -14,44 +14,10 @@
     <title>Sabor Caro | Buycart</title>
 </head>
 
-<body class="bg-dotted">
+<body >
 
-    <div class="sticky-header">
-        <div class="line-1">
-            <p class="col-white text-bold">Precios baratos, sabor Caro y Colombiano <i class="fa fa-diamond"></i></p>
-        </div>
-        <div class="line-2"></div>
-        <div class="line-3"></div>
-    </div>
-    <main>
-        <h2 class="col-white text-bold">Carrito de compras</h2>
+    
 
-        <div class="table-responsive">
-        <table class="table align-middle">
-            <thead>
-            <tr>
-                ...
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                ...
-            </tr>
-            <tr class="align-bottom">
-                ...
-            </tr>
-            <tr>
-                <td>...</td>
-                <td>...</td>
-                <td class="align-top">This cell is aligned to the top.</td>
-                <td>...</td>
-            </tr>
-            </tbody>
-        </table>
-        </div>
-
-
-    </main>
 
     <?php
     session_start();
