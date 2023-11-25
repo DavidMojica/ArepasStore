@@ -62,6 +62,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 return_response(false, "no", null);
             }
             break; 
+
+        case 5:
+            if (isset($_SESSION['carrito'])) {
+                // Eliminar todos los elementos del carrito
+                $_SESSION['carrito'] = array();
+            }
+            break;
         default:
             break;
     }

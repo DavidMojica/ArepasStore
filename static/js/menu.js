@@ -20,7 +20,6 @@ function getProducts(action) {
                     for (let p of products) {
                         totalProd.push(new Producto(p.id, p.nombre, p.precio, p.id_tipo));
                     }
-                    console.log(totalProd);
                     resolve(totalProd);
                 } else {
                     console.log(data);
@@ -56,7 +55,7 @@ function agregarAlCarro(id, cantidad){
     const productoEncontrado = productos.find(objeto => objeto.id === id);
     if (productoEncontrado) {
         productoEncontrado.cantidad = parseInt(cantidad);
-        carrito.addProduct(productoEncontrado);
+        carrito.addProduct(productoEncontrado, true);
     }
 }
 

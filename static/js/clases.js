@@ -12,7 +12,7 @@ class Carrito{
     constructor() {
         this.productos = {};
     }
-    addProduct(producto) {
+    addProduct(producto, act) {
         if (this.productos[producto.id]) {
             this.productos[producto.id].cantidad += producto.cantidad;
             $.ajax({
@@ -33,24 +33,26 @@ class Carrito{
         } else {
             // Si el producto no está en el carrito, se añade
             this.productos[producto.id] = producto;
-            $.ajax({
-                url: '../scriptsPHP/carrito.php',
-                type: 'POST',
-                data: {
-                    id: producto.id,
-                    nombre: producto.nombre,
-                    precio: producto.precio,
-                    cantidad: producto.cantidad,
-                    tipo: producto.tipo,
-                    action: 1
-                },
-                success: function (response) {
-                    console.log('Producto agregado al carrito en el servidor:', response);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.error('Error al agregar el producto al carrito en el servidor:',jqXHR, textStatus, errorThrown);
-                }
-            });
+            if(act){
+                $.ajax({
+                    url: '../scriptsPHP/carrito.php',
+                    type: 'POST',
+                    data: {
+                        id: producto.id,
+                        nombre: producto.nombre,
+                        precio: producto.precio,
+                        cantidad: producto.cantidad,
+                        tipo: producto.tipo,
+                        action: 1
+                    },
+                    success: function (response) {
+                        console.log('Producto agregado al carrito en el servidor:', response);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.error('Error al agregar el producto al carrito en el servidor:',jqXHR, textStatus, errorThrown);
+                    }
+                });
+            }
         }
     }
 
@@ -75,5 +77,22 @@ class Carrito{
         } else{
             console.log(`error al borrar ajax ${producto}`)
         }
+    }
+
+    borrarTodo(){
+        this.productos = {};
+        $.ajax({
+            url: '../scriptsPHP/carrito.php',
+            type: 'POST',
+            data: {
+                action: 5
+            },
+            success: function (response) {
+                console.log('Productos borrados', response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error('Error al borrar los productos', textStatus, errorThrown);
+            }
+        });
     }
 }

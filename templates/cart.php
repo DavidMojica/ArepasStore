@@ -41,7 +41,7 @@
                 <th scope="col">Cantidad</th>
                 <th scope="col">P/Unidad</th>
                 <th scope="col">Precio</th>
-                <th scope="col"><button class="btn btn-danger">Limpiar carro</button></th>
+                <th scope="col"><button class="btn btn-danger" onclick="clearAll()">Limpiar carro</button></th>
                 </tr>
             </thead>
             <tbody id="cartBody">

@@ -12,8 +12,7 @@ function getCartProducts(){
             let productos = JSON.parse(response.reboot);
             console.log(productos)
             for(let p of productos){
-                let producto = new Producto(p.id, p.nombre, p.precio, p.tipo, p.cantidad)
-               carrito.addProduct(producto);
+                carrito.addProduct(new Producto(p.id, p.nombre, p.precio, p.tipo, p.cantidad), false); 
                 displayCartProducts(p);
             }
         },
@@ -23,19 +22,12 @@ function getCartProducts(){
     });
 }
 
-function quitarProducto(id){
-    for (const key in carrito.productos) {
-        console.log(key)
-        if (carrito.productos.hasOwnProperty(key)) {
-            const producto = carrito.productos[key];
-            if (producto.id === id) {
-                var productoEncontrado = producto;
-                console.log(productoEncontrado)
-            }
-        }
-    }
-    carrito.removeProduct(productoEncontrado);
+function clearAll(){
+    carrito.borrarTodo();
+}
 
+function quitarProducto(producto){
+    carrito.removeProduct(producto);
 }
 
 function displayCartProducts(producto){
@@ -61,7 +53,7 @@ function displayCartProducts(producto){
     btnBorrarProducto.textContent = 'Quitar producto';
     btnBorrarProducto.setAttribute('class', "btn btn-warning");
     btnBorrarProducto.addEventListener('click', function(){
-        quitarProducto(producto.id);
+        quitarProducto(producto);
     });
     
     td4.appendChild(btnBorrarProducto);
