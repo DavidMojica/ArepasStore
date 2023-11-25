@@ -46,9 +46,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="line-2"></div>
         <div class="line-3"></div>
     </div>
-
-    <div class="bg-blurry">
-        <div class="div_top">
+    <div class="div_top">
             <nav class="navbar navbar-expand-lg navbar_d2">
                 <div class="container cont_top">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +67,6 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </nav>
         </div>
-    </div>
     <main class="">
         <h2 class="col-white text-bold">Arepas</h2>
         <div class="arepas-grid" id="arepas-grid">

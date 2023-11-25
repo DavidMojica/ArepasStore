@@ -24,10 +24,12 @@ function getCartProducts(){
 }
 
 function clearAll(){
+    window.location.reload(true);
     carrito.borrarTodo();
 }
 
-function quitarProducto(producto){
+function quitarProducto(producto, tr){
+    tr.remove();
     carrito.removeProduct(producto);
 }
 var total=0;
@@ -86,7 +88,7 @@ function displayCartProducts(producto){
     btnBorrarProducto.textContent = 'Quitar producto';
     btnBorrarProducto.setAttribute('class', "btn btn-warning");
     btnBorrarProducto.addEventListener('click', function(){
-        quitarProducto(producto);
+        quitarProducto(producto, tr);
     });
     
     td4.appendChild(btnBorrarProducto);
