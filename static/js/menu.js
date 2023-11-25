@@ -1,5 +1,6 @@
 const carrito = new Carrito();
 var productos = [];
+const imagenes = [/*Rutas*/];
 
 
 function getProducts(action) {

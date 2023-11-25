@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="self-css/general.css">
     <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <!-- Custom JS -->
+    <script src="../static/js/clases.js" defer></script>
     <script src="../static/js/cart.js" defer></script>
 
 

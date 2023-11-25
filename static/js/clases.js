@@ -41,6 +41,7 @@ class Carrito{
                     nombre: producto.nombre,
                     precio: producto.precio,
                     cantidad: producto.cantidad,
+                    tipo: producto.tipo,
                     action: 1
                 },
                 success: function (response) {
@@ -55,6 +56,7 @@ class Carrito{
 
     removeProduct(producto) {
         if (this.productos[producto.id]) {
+            console.log("entro")
             delete this.productos[producto.id];
             $.ajax({
                 url: '../scriptsPHP/carrito.php',

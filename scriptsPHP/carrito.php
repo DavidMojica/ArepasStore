@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         case 4:
             if(isset($_SESSION['carrito'])){
-                return_response(true,"ok",json_encode($_SESSION['carrito']));
+                return_response(true,"ok", json_encode(array_values($_SESSION['carrito'])));
             } else{
                 return_response(false, "no", null);
             }
