@@ -9,9 +9,6 @@ $stmt = $pdo->prepare($query);
 $stmt->bindParam(":tipo", $tipo_adicion, PDO::PARAM_INT);
 $stmt->execute();
 $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +27,15 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <link rel="stylesheet" href="../static/css/btn-star.css">
     <link rel="stylesheet" href="../static/css/card-food.css">
-    <link rel="stylesheet" href="self-css/general.css">
     <link rel="stylesheet" href="self-css/menu.css">
+    <link rel="stylesheet" href="self-css/general.css">
     <link rel="shortcut icon" href="../extras/logos/arepa.png" type="image/x-icon">
     <!-- custom JS -->
     <script src="../static/js/essentials.js" defer></script>
     <script src="../static/js/clases.js"></script>
     <script src="../static/js/menu.js" defer></script>
 
-    <title>Sabor Caro | Inicio</title>
+    <title>Sabor Caro | Menu</title>
 </head>
 
 <body class="bg-dotted">

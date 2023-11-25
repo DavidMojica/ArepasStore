@@ -59,6 +59,12 @@ function agregarAlCarro(id, cantidad){
     }
 }
 
+function quitarProducto(id){
+    const productoEncontrado = productos.find(objeto => objeto.id === id);
+    if (productoEncontrado) {
+        carrito.removeProduct(productoEncontrado);
+    }
+}
 
 
 
