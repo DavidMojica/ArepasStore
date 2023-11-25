@@ -1,5 +1,11 @@
 <!-- Imports -->
 <?php
+if (isset($_SESSION['username'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
 include("../scriptsPHP/essentials.php");
 include("../scriptsPHP/PDOconn.php");
 $tipo_adicion = 2;
@@ -54,7 +60,7 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+                            <li class="nav-item"><a href="../index.php" class="nav-link px-2 text-light">Home</a></li>
                             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Menú</a></li>
                             <li class="nav-item"><a href="cart.php" class="nav-link px-2 text-light">Carrito</a></li>
                             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pedidos</a></li>
