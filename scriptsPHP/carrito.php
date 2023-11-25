@@ -1,4 +1,5 @@
 <?php
+include("essentials.php");
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -53,6 +54,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
             break;
+
+        case 4:
+            if(isset($_SESSION['carrito'])){
+                return_response(true,"ok",json_encode($_SESSION['carrito']));
+            } else{
+                return_response(false, "no", null);
+            }
+            break; 
         default:
             break;
     }
