@@ -1,5 +1,7 @@
 const cartBody = document.getElementById('cartBody');
 const carrito = new Carrito();
+var total=0;
+
 
 function getCartProducts(){
     $.ajax({
@@ -28,11 +30,15 @@ function clearAll(){
     carrito.borrarTodo();
 }
 
-function quitarProducto(producto, tr){
-    tr.remove();
+function quitarProducto(producto, tr, precioTOT){
+    const totalPrice = document.getElementById('totalPrice');
+    precioTOT = parseInt(precioTOT);
+    total -= precioTOT;
+    totalPrice.textContent = total;
+    tr.remove(); 
     carrito.removeProduct(producto);
 }
-var total=0;
+
 
 function graphTableFooter(){
     const tr = document.createElement('tr');
@@ -46,15 +52,25 @@ function graphTableFooter(){
     td2.textContent = "Total";
 
     const td3 = document.createElement('td');
+    td3.setAttribute('id', "totalPrice");
     td3.textContent = total;
 
     const td4 = document.createElement('td');
 
-    const btnComprar = document.createElement('button');
-    btnComprar.textContent = 'Comprar';
-    btnComprar.setAttribute('class', 'btn btn-success');
 
-    td4.appendChild(btnComprar);
+    if(Object.keys(carrito.productos).length >= 1){
+        const btnComprar = document.createElement('button');
+        btnComprar.textContent = 'Comprar';
+        btnComprar.setAttribute('class', 'btn btn-success');
+        td4.appendChild(btnComprar);
+    } else{
+        const btnSinArticulos = document.createElement('button');
+        btnSinArticulos.textContent = "Sin Articulo";
+        btnSinArticulos.setAttribute('class', 'btn btn-warning');
+        td4.appendChild(btnSinArticulos);
+    }
+    
+
     tr.appendChild(th);
     tr.appendChild(td1);
     tr.appendChild(td2);
@@ -88,7 +104,7 @@ function displayCartProducts(producto){
     btnBorrarProducto.textContent = 'Quitar producto';
     btnBorrarProducto.setAttribute('class', "btn btn-warning");
     btnBorrarProducto.addEventListener('click', function(){
-        quitarProducto(producto, tr);
+        quitarProducto(producto, tr, td3.textContent);
     });
     
     td4.appendChild(btnBorrarProducto);

@@ -1,6 +1,10 @@
 <?php
-if (!isset($_SESSION['username'])) {
-    header('Location: ../index.php');
+// Iniciar sesión
+session_start();
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['username']) || !$_SESSION['username']) {
+    header('Location: login.php');
     exit();
 }
 ?>
@@ -48,7 +52,9 @@ if (!isset($_SESSION['username'])) {
                         <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrito</a></li>
                         <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pedidos</a></li>
                         <li class="nav-item m-1">
-                            <a href="templates/login.php"><button class="btn btn-danger">Cerrar sesión</button></a>
+                            <form action="../scriptsPHP/logout.php" method="post">
+                                <button class="btn btn-danger">Cerrar sesión</button>
+                            </form>
                         </li>
                     </ul>
                 </div>

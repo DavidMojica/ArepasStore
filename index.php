@@ -53,15 +53,14 @@ include("scriptsPHP/PDOconn.php");
                             <?php
                             } else {
                             ?>
-                                <li class="nav-item m-1">
-                                    <a href="templates/login.php"><button class="btn btn-danger">Cerrar sesión</button></a>
-                                </li>
+                            <form action="scriptsPHP/logout.php" method="post">
+                                <button class="btn btn-danger">Cerrar sesión</button>
+                            </form>
                             <?php } ?>
                         </ul>
                     </div>
                 </div>
             </nav>
-
 
             <section class="griddle">
                 <div class="row quarry">
