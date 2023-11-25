@@ -30,6 +30,12 @@ function mandar_al_servidor(user, pass, node, msg) {
     });
 };
 
+function quitarProducto(id){
+    const productoEncontrado = productos.find(objeto => objeto.id === id);
+    if (productoEncontrado) {
+        carrito.removeProduct(productoEncontrado);
+    }
+}
 
 function clearSubtx(msg) {
     msg.textContent = "";
