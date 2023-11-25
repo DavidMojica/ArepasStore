@@ -53,21 +53,20 @@ include("scriptsPHP/PDOconn.php");
                             <?php
                             } else {
                             ?>
-                                <li class="nav-item m-1">
-                                    <a href="templates/login.php"><button class="btn btn-danger">Cerrar sesión</button></a>
-                                </li>
+                            <form action="scriptsPHP/logout.php" method="post">
+                                <button class="btn btn-danger">Cerrar sesión</button>
+                            </form>
                             <?php } ?>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-
             <section class="griddle">
                 <div class="row quarry">
                     <img src="extras/logos/logo.png" alt="Sabor Caro" class="logo">
                     <h1 class="col-white text-bold">AREPAS CON TODO!</h1>
-                    <a href="templates/login.php">
+                    <a href="templates/menu.php">
                         <button class="btn_star">
                             <i class="fa fa-caret-right" aria-hidden="true"></i>
                             Ordenar ahora!
@@ -137,12 +136,11 @@ include("scriptsPHP/PDOconn.php");
     <footer class="py-3 bg-dark">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Menú</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrito</a></li>
+            <li class="nav-item"><a href="templates/menu.php" class="nav-link px-2 text-light">Menú</a></li>
+            <li class="nav-item"><a href="templates/cart.php" class="nav-link px-2 text-light">Carrito</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pedidos</a></li>
         </ul>
         <p class="text-center text-light">© 2023 Sabor Caro</p>
     </footer>
 </body>
-
 </html>

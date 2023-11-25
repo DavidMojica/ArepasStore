@@ -1,5 +1,6 @@
-const carrito = new Carrito();
+const carrito1 = new Carrito();
 var productos = [];
+const imagenes = [/*Rutas*/];
 
 
 function getProducts(action) {
@@ -19,7 +20,6 @@ function getProducts(action) {
                     for (let p of products) {
                         totalProd.push(new Producto(p.id, p.nombre, p.precio, p.id_tipo));
                     }
-                    console.log(totalProd);
                     resolve(totalProd);
                 } else {
                     console.log(data);
@@ -55,73 +55,13 @@ function agregarAlCarro(id, cantidad){
     const productoEncontrado = productos.find(objeto => objeto.id === id);
     if (productoEncontrado) {
         productoEncontrado.cantidad = parseInt(cantidad);
-        carrito.addProduct(productoEncontrado);
+        carrito1.addProduct(productoEncontrado, true);
     }
 }
 
 function quitarProducto(id){
     const productoEncontrado = productos.find(objeto => objeto.id === id);
     if (productoEncontrado) {
-        carrito.removeProduct(productoEncontrado);
+        carrito1.removeProduct(productoEncontrado);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $(document).ready(function() {
-//     // Función para agregar un producto al carrito mediante AJAX
-//     $(document).ready(function() {
-//         // Función para agregar un producto al carrito mediante AJAX
-//         $(".form-food").submit(function(event) {
-//             event.preventDefault();
-    
-//             var form = $(this);
-//             var formData = form.serialize(); // Serializar datos del formulario
-    
-//             $.ajax({
-//                 type: "POST",
-//                 url: "../scriptsPHP/agregar_carrito.php",
-//                 data: formData, // Enviar datos serializados
-//                 dataType: "json",
-//                 success: function(response) {
-//                     console.log(response)
-//                 },
-//                 error: function(error) {
-//                     console.error("Error en la solicitud AJAX", error);
-//                 }
-//             });
-//         });
-//     });
-    
-
-//     // Función para mostrar el carrito mediante AJAX
-//     $(".btn-mostrar-carrito").click(function(event) {
-//         event.preventDefault();
-
-//         $.ajax({
-//             type: "GET",
-//             url: "mostrar_carrito.php",
-//             dataType: "json",
-//             success: function(response) {
-//                 console.log(response);
-//             },
-//             error: function(error) {
-//                 console.error("Error en la solicitud AJAX", error);
-//             }
-//         });
-//     });
-// });

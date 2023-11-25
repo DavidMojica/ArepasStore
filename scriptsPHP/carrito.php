@@ -1,4 +1,5 @@
 <?php
+include("essentials.php");
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -51,6 +52,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         break; 
                     }
                 }
+            }
+            break;
+
+        case 4:
+            if(isset($_SESSION['carrito'])){
+                return_response(true,"ok", json_encode(array_values($_SESSION['carrito'])));
+            } else{
+                return_response(false, "no", null);
+            }
+            break; 
+
+        case 5:
+            if (isset($_SESSION['carrito'])) {
+                // Eliminar todos los elementos del carrito
+                $_SESSION['carrito'] = array();
             }
             break;
         default:
