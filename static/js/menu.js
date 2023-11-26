@@ -41,7 +41,6 @@ function getProducts(action) {
 async function loadProducts() {
     try {
         productos = await getProducts(1);
-        console.log(productos);
         for (let p of productos) {
             displayProduct(p, "../extras/resources/arepa-carne.jpg");
         }
