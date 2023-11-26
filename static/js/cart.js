@@ -39,7 +39,6 @@ function quitarProducto(producto, tr, precioTOT){
     carrito.removeProduct(producto);
 }
 
-
 function graphTableFooter(){
     const tr = document.createElement('tr');
     
@@ -57,12 +56,25 @@ function graphTableFooter(){
 
     const td4 = document.createElement('td');
 
+    const form = document.createElement('form');
+    form.action = "pedidos.php";
+    form.method = "POST";
+
+    const hidden = document.createElement('input');
+    hidden.id = "hidTotal";
+    hidden.type = "hidden";
+    hidden.textContent = total;
+
+    form.appendChild(hidden);
+    form.appendChild(hidden);
+    
 
     if(Object.keys(carrito.productos).length >= 1){
         const btnComprar = document.createElement('button');
         btnComprar.textContent = 'Comprar';
         btnComprar.setAttribute('class', 'btn btn-success');
-        td4.appendChild(btnComprar);
+        form.appendChild(btnComprar);
+        td4.appendChild(form);
     } else{
         const btnSinArticulos = document.createElement('button');
         btnSinArticulos.textContent = "Sin Articulo";
@@ -70,7 +82,6 @@ function graphTableFooter(){
         td4.appendChild(btnSinArticulos);
     }
     
-
     tr.appendChild(th);
     tr.appendChild(td1);
     tr.appendChild(td2);
@@ -98,7 +109,6 @@ function displayCartProducts(producto){
     total += subtotal;
 
     const td4 = document.createElement('td');
-    
 
     const btnBorrarProducto = document.createElement('button');
     btnBorrarProducto.textContent = 'Quitar producto';
