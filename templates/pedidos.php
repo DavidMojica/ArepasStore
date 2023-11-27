@@ -98,8 +98,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":userid", $userid, PDO::PARAM_INT);
         $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         ?>
+
+        <div class="table-responsive">
+        <table class="table table-borderless table-dark">
+            <thead class="table-active">
+                <tr>
+                <th scope="col">ID del pedido</th>
+                <th scope="col">Entregado a:</th>
+                <th scope="col">Estado del pedido:</th>
+                <th scope="col">Valor del pedido</th>
+                <th scope="col">Productos</th>
+                </tr>
+            </thead>
+            <tbody id="cartBody">
+            <?php
+            foreach ($result as $row){
+                $idPedido = $row['id'];
+
+                $query = 'SELECT `id_pedido`, `id_producto` FROM `tbl_productos_pedido` WHERE `id_pedido` = :idPedido';
+                $stmt = $pdo->prepare($query);
+                $stmt->bindParam(':idPedido', $idPedido, PDO::PARAM_INT);
+
+                
+                echo " <tr>
+                    <th scope='row'>". $idPedido ."</th>
+                    <td>".$row['nombre_entregar'] ."</td>
+                    <td>".$row['direccion'] ."</td>
+                    <td>".$row['valor_pedido'] ."</td>
+                </tr>
+                ";
+            }
+            ?>
+            </tbody>
+        </table>
+        </div>
 
     </main>
 </body>
