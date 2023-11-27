@@ -46,11 +46,22 @@ function graphTableFooter(){
     th.scope = "row";
 
     const td1 = document.createElement('td');
+
+    const form = document.createElement('form');
+    form.setAttribute('class', 'form-row');
+    form.action = "pedidos.php";
+    form.method = "POST";
+
+    const nombreEntrega = document.createElement('input');
+    nombreEntrega.type = "text";
+    nombreEntrega.placeholder = "¿Quien recibe? (nombre)";
+    nombreEntrega.setAttribute('class', 'form-control mb-2 col-md-2');
+    nombreEntrega.setAttribute('name', 'nombreEntrega');
     
     const direccion = document.createElement('input');
     direccion.type = "text";
     direccion.placeholder = "Ingrese la dirección destino";
-    direccion.setAttribute('class', 'form-control');
+    direccion.setAttribute('class', 'form-control mb-2 col-md-2');
     direccion.setAttribute('name', 'direccion');
 
     const td2 = document.createElement('td');
@@ -63,9 +74,7 @@ function graphTableFooter(){
 
     const td4 = document.createElement('td');
 
-    const form = document.createElement('form');
-    form.action = "pedidos.php";
-    form.method = "POST";
+    
 
     const hidden = document.createElement('input');
     hidden.id = "hidTotal";
@@ -80,7 +89,8 @@ function graphTableFooter(){
         const btnComprar = document.createElement('button');
         btnComprar.textContent = 'Comprar';
         btnComprar.setAttribute('class', 'btn btn-success');
-        td1.appendChild(direccion);
+        form.appendChild(nombreEntrega);
+        form.appendChild(direccion);
         form.appendChild(btnComprar);
         td4.appendChild(form);
     } else{
