@@ -11,7 +11,6 @@ Array.from(changers).forEach(element => {
                 value: element.value
             },
             success: function(response) {
-                console.log("ok");
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR)

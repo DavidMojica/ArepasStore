@@ -103,7 +103,7 @@ $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td>" . $row['nombre_entregar'] . "</td>
                         <td>" . $row['direccion'] . "</td>
                         <td>"; ?>
-                            <select name='estado' class="changers" data-idpedido="<?php echo $idPedido; ?>">
+                            <select name='estado' class="changers form-select" data-idpedido="<?php echo $idPedido; ?>">
                                 <?php
                                 foreach ($estados as $est) {
                                     $selected = ($est["id"] == $row["id_estado"]) ? "selected" : "";

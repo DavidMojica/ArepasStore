@@ -37,3 +37,6 @@
 .btn_star{
     width: 100%;
 }
+h1{
+    text-shadow: 0 0 3px #000, 0 0 5px #333;
+}
