@@ -51,7 +51,7 @@ if (!isset($_SESSION['username']) || !$_SESSION['username']) {
                         <li class="nav-item"><a href="../index.php" class="nav-link px-2 text-light">Home</a></li>
                         <li class="nav-item"><a href="menu.php" class="nav-link px-2 text-light">Menú</a></li>
                         <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrito</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pedidos</a></li>
+                        <li class="nav-item"><a href="pedidos.php" class="nav-link px-2 text-light">Pedidos</a></li>
                         <li class="nav-item m-1">
                             <form action="../scriptsPHP/logout.php" method="post">
                                 <button class="btn btn-danger">Cerrar sesión</button>

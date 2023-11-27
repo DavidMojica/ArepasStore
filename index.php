@@ -16,7 +16,6 @@ include("scriptsPHP/PDOconn.php");
     <!-- fa icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="static/css/bg-col.css">
     <link rel="stylesheet" href="static/css/btn-star.css">
     <link rel="stylesheet" href="templates/self-css/general.css">
     <link rel="stylesheet" href="templates/self-css/index.css">
@@ -43,6 +42,10 @@ include("scriptsPHP/PDOconn.php");
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
+                            <li class="nav-item"><a href="#" class="nav-link px-2 ">Home</a></li>
+                            <li class="nav-item"><a href="templates/menu.php" class="nav-link px-2 ">Menú</a></li>
+                            <li class="nav-item"><a href="templates/cart.php" class="nav-link px-2 ">Carrito</a></li>
+                            <li class="nav-item"><a href="templates/pedidos.php" class="nav-link px-2 ">Pedidos</a></li>
                             <?php
                             session_start();
                             if (!isset($_SESSION['username'])) {
@@ -126,7 +129,6 @@ include("scriptsPHP/PDOconn.php");
                                 </svg>
                             </div>
                         </button>
-
                     </a>
                 </div>
             </section>

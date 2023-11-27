@@ -54,3 +54,7 @@ body{
 .no-deco{
     text-decoration: none;
 }
+
+.navbar-toggler{
+    background-color: #fff;
+}
