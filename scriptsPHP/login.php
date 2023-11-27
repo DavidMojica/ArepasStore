@@ -22,6 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 try{
                     session_start();
                     $_SESSION['username'] = $user;
+                    $_SESSION['userid'] = $result[0]['id'];
                     return_response(true, $result, "../templates/menu.php");
                 }
                 catch(Exception $e){
