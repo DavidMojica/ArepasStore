@@ -147,3 +147,4 @@ function displayCartProducts(producto){
 
 //-----------CODE
 getCartProducts();
+//
