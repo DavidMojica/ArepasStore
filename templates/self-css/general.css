@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap');
+:root{
+    --colombia-yellow: #F7C700;
+    --colombia-blue: #002E83;
+    --colombia-red: #C20F2D;
+}
+
+*{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    background-color: rgb(247, 242, 237);
+    margin: 0;
+}
+
+.sticky-header{
+    height: 10vh;
+}
+
+.line-1{
+    text-align: center;
+    background-color: var(--colombia-yellow);
+    min-height: 50%;
+}
+
+.line-2{
+    background-color: var(--colombia-blue);
+    min-height: 25%;
+}
+
+.line-3{
+    background-color: var(--colombia-red);
+    min-height: 25%;
+}
+
+.col-white{
+    color: #fff;
+}
+
+.text-bold{
+    font-weight: 700;
+}
+
+.small{
+    font-size: 16px;
+}
+
+#register_form{
+    position: absolute;
+    z-index: -1;
+}
+
+.no-deco{
+    text-decoration: none;
+}

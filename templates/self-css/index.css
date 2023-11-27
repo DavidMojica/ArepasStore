@@ -1,0 +1,41 @@
+
+.bg-blurry{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/314/976/large_2x/selective-focus-of-wooden-table-with-a-blurred-coffee-and-restaurant-cafe-with-customers-background-free-photo.jpg);
+    background-repeat: no-repeat;
+}
+.navbar-toggler{
+    background-color: #fff;
+}
+.sticky-header{
+    top: 0;
+    position: sticky;
+    z-index: 10;
+}
+.navbar{
+    position: fixed;
+}
+
+.div_top{
+    height: 100vh;
+}
+
+.griddle{
+    display: grid;
+    place-items: center;
+    height: 90vh;
+}
+.quarry{
+    margin-top: 10vh;
+    display: grid;
+    grid-template-rows: 1fr .85fr .3fr;
+    place-items: center;
+    padding: 3em;
+}
+
+.logo{
+    width: 350px;
+    border-radius: 2em 1em;
+}
+.btn_star{
+    width: 100%;
+}

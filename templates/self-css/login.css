@@ -1,0 +1,46 @@
+.logo_form{
+    display: none;
+}
+main{
+    display: grid;
+    place-items: center;
+    height: 85.7vh;
+}
+#loginForm, #regForm{
+    height: 45vh;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows:.001fr 1.8fr 0.9fr 0.9fr 0.8fr 1.6fr; 
+    gap: 0px 0px; 
+    place-items: center;
+}
+.logo{
+    width: 150px;
+    border-radius: 1em 2em;
+}
+
+@media (max-width: 768px) {
+    .navbar{
+        display: none;
+    }
+    
+    .form-container{
+        height: 100vh;
+        width: 99vw;
+    }
+    #loginForm, #regForm{   
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1.9fr 0.9fr 0.8fr 0.7fr 1fr 1.7fr; 
+        gap: 0px 0px; 
+        height: 100%;
+        
+    }
+    .form-container .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 80%;
+      }
+
+
+}

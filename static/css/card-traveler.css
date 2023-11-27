@@ -1,0 +1,61 @@
+.card-traveler {
+    width: 30vw;
+    height: 50vh;
+    min-width: 500px;
+    min-height: 500px;
+    background: #212121;
+    transition: all 0.4s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+    font-size: 30px;
+    font-weight: 900;
+  }
+  
+  /* .card-traveler:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+    background: rgb(103, 151, 255);
+  } */
+  
+  .first-content {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    opacity: 1;
+    border-radius: 2em;
+    grid-template-columns: 1fr; 
+    display: grid; 
+    grid-template-rows: .8fr 2fr 0.8fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "."
+      "."
+      ".";
+  place-items: center;
+  z-index: 10;
+  }
+  
+  /* .card-traveler:hover .first-content {
+    height: 0px;
+    opacity: 0;
+  } */
+  
+  .second-content {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0px;
+    transform: rotate(90deg) scale(-1);
+  }
+  
+  /* .card-traveler:hover .second-content {
+    opacity: 1;
+    height: 100%;
+    font-size: 1.8rem;
+    transform: rotate(0deg);
+  } */
+  
