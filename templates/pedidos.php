@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="self-css/general.css">
+    <link rel="stylesheet" href="self-css/pedidos.css">
     <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <!-- Custom JS -->
     <script src="../static/js/clases.js" defer></script>

@@ -12,7 +12,6 @@ function getCartProducts(){
         },
         success: function (response) {
             let productos = JSON.parse(response.reboot);
-            console.log(productos)
             for(let p of productos){
                 carrito.addProduct(new Producto(p.id, p.nombre, p.precio, p.tipo, p.cantidad), false); 
                 displayCartProducts(p);
@@ -25,9 +24,9 @@ function getCartProducts(){
     });
 }
 
-function clearAll(){
+async function clearAll(){
+    await carrito.borrarTodo();
     window.location.reload(true);
-    carrito.borrarTodo();
 }
 
 function quitarProducto(producto, tr, precioTOT){
