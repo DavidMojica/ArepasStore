@@ -2,6 +2,12 @@
 include("../scriptsPHP/PDOconn.php");
 session_start();
 
+// Proteger la ruta
+if (!isset($_SESSION['username']) || !$_SESSION['username']) {
+    header('Location: login.php');
+    exit();
+}
+
 $userid = $_SESSION['userid'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $total = 0;
@@ -103,7 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
-
         <div class="table-responsive">
         <table class="table table-borderless table-dark">
             <thead class="table-active">
@@ -141,14 +146,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 foreach ($resultProd as $rp) {
                     echo "<p>" . $rp['nombre'] . "</p>";
                 }
-
                 echo "</td></tr>";
             }
             ?>
             </tbody>
         </table>
         </div>
-
     </main>
 </body>
 </html>
