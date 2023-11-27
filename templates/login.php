@@ -21,7 +21,6 @@ if (isset($_SESSION['username'])) {
     <!-- Custom css -->
     <link rel="stylesheet" href="self-css/general.css">
     <link rel="stylesheet" href="self-css/login.css">
-    <link rel="stylesheet" href="../static/css/card-traveler.css">
     <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <link rel="stylesheet" href="../static/css/in-focus.css">
     <link rel="stylesheet" href="../static/css/btn_type_A.css">
