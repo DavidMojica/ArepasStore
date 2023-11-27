@@ -2,7 +2,6 @@ const carrito1 = new Carrito();
 var productos = [];
 const imagenes = [/*Rutas*/];
 
-
 function getProducts(action) {
     return new Promise((resolve, reject) => {
         $.ajax({
@@ -48,7 +47,6 @@ async function loadProducts() {
         console.error(error);
     }
 }
-loadProducts();
 
 function agregarAlCarro(id, cantidad){
     const productoEncontrado = productos.find(objeto => objeto.id === id);
@@ -64,3 +62,6 @@ function quitarProducto(id){
         carrito1.removeProduct(productoEncontrado);
     }
 }
+
+//codigo
+loadProducts();

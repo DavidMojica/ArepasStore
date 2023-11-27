@@ -10,7 +10,6 @@ if (!isset($_SESSION['username']) || !$_SESSION['username']) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,13 +22,12 @@ if (!isset($_SESSION['username']) || !$_SESSION['username']) {
     <link rel="shortcut icon" href="../extras/logos/arepa.png" type="image/x-icon">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="self-css/cart.css">
+    <link rel="stylesheet" href="self-css/centerTable.css">
     <link rel="stylesheet" href="self-css/general.css">
     <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <!-- Custom JS -->
     <script src="../static/js/clases.js" defer></script>
     <script src="../static/js/cart.js" defer></script>
-
 
     <title>Sabor Caro | Buycart</title>
 </head>
@@ -52,7 +50,7 @@ if (!isset($_SESSION['username']) || !$_SESSION['username']) {
                         <li class="nav-item"><a href="../index.php" class="nav-link px-2 text-light">Home</a></li>
                         <li class="nav-item"><a href="menu.php" class="nav-link px-2 text-light">Menú</a></li>
                         <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrito</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pedidos</a></li>
+                        <li class="nav-item"><a href="pedidos.php" class="nav-link px-2 text-light">Pedidos</a></li>
                         <li class="nav-item m-1">
                             <form action="../scriptsPHP/logout.php" method="post">
                                 <button class="btn btn-danger">Cerrar sesión</button>

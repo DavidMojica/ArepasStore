@@ -19,10 +19,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if(count($result) == 1){
+                $usertype = $result[0]['id_tipo_usuario'];
                 try{
                     session_start();
                     $_SESSION['username'] = $user;
-                    return_response(true, $result, "../templates/menu.php");
+                    $_SESSION['userid'] = $result[0]['id'];
+                    $_SESSION['usertype'] = $usertype;
+                    if($usertype == 1)
+                        return_response(true, $result, "../templates/menu.php");
+                    else if ($usertype == 2)
+                        return_response(true, $result, "../templates/admin.php");    
                 }
                 catch(Exception $e){
                     return_Response(false, $e, "../templates/login.php");

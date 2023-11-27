@@ -3,9 +3,7 @@
     background-image: url(https://static.vecteezy.com/system/resources/previews/002/314/976/large_2x/selective-focus-of-wooden-table-with-a-blurred-coffee-and-restaurant-cafe-with-customers-background-free-photo.jpg);
     background-repeat: no-repeat;
 }
-.navbar-toggler{
-    background-color: #fff;
-}
+
 .sticky-header{
     top: 0;
     position: sticky;
@@ -38,4 +36,7 @@
 }
 .btn_star{
     width: 100%;
+}
+h1{
+    text-shadow: 0 0 3px #000, 0 0 5px #333;
 }

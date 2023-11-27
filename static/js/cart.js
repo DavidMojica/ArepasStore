@@ -12,7 +12,6 @@ function getCartProducts(){
         },
         success: function (response) {
             let productos = JSON.parse(response.reboot);
-            console.log(productos)
             for(let p of productos){
                 carrito.addProduct(new Producto(p.id, p.nombre, p.precio, p.tipo, p.cantidad), false); 
                 displayCartProducts(p);
@@ -25,9 +24,9 @@ function getCartProducts(){
     });
 }
 
-function clearAll(){
+async function clearAll(){
+    await carrito.borrarTodo();
     window.location.reload(true);
-    carrito.borrarTodo();
 }
 
 function quitarProducto(producto, tr, precioTOT){
@@ -47,18 +46,34 @@ function graphTableFooter(){
 
     const td1 = document.createElement('td');
 
+    const form = document.createElement('form');
+    form.setAttribute('class', 'form-row');
+    form.action = "pedidos.php";
+    form.method = "POST";
+
+    const nombreEntrega = document.createElement('input');
+    nombreEntrega.type = "text";
+    nombreEntrega.placeholder = "¿Quien recibe? (nombre)";
+    nombreEntrega.setAttribute('class', 'form-control mb-2 col-md-2');
+    nombreEntrega.setAttribute('name', 'nombreEntrega');
+    
+    const direccion = document.createElement('input');
+    direccion.type = "text";
+    direccion.placeholder = "Ingrese la dirección destino";
+    direccion.setAttribute('class', 'form-control mb-2 col-md-2');
+    direccion.setAttribute('name', 'direccion');
+
     const td2 = document.createElement('td');
     td2.textContent = "Total";
 
     const td3 = document.createElement('td');
     td3.setAttribute('id', "totalPrice");
+    td3.setAttribute('name', 'totalPrice');
     td3.textContent = total;
 
     const td4 = document.createElement('td');
 
-    const form = document.createElement('form');
-    form.action = "pedidos.php";
-    form.method = "POST";
+    
 
     const hidden = document.createElement('input');
     hidden.id = "hidTotal";
@@ -73,11 +88,13 @@ function graphTableFooter(){
         const btnComprar = document.createElement('button');
         btnComprar.textContent = 'Comprar';
         btnComprar.setAttribute('class', 'btn btn-success');
+        form.appendChild(nombreEntrega);
+        form.appendChild(direccion);
         form.appendChild(btnComprar);
         td4.appendChild(form);
     } else{
         const btnSinArticulos = document.createElement('button');
-        btnSinArticulos.textContent = "Sin Articulo";
+        btnSinArticulos.textContent = "Sin Articulos";
         btnSinArticulos.setAttribute('class', 'btn btn-warning');
         td4.appendChild(btnSinArticulos);
     }
@@ -130,3 +147,4 @@ function displayCartProducts(producto){
 
 //-----------CODE
 getCartProducts();
+//
