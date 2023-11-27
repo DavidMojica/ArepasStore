@@ -40,7 +40,7 @@ $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="self-css/pedidos.css">
     <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <!-- Custom JS -->
-    <script src="../static/js/clases.js" defer></script>
+    <script src="../static/js/admin.js" defer></script>
     
     <title>Sabor Caro | Admin</title>
 </head>
@@ -103,7 +103,7 @@ $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td>" . $row['nombre_entregar'] . "</td>
                         <td>" . $row['direccion'] . "</td>
                         <td>"; ?>
-                            <select name='estado'>
+                            <select name='estado' class="changers" data-idpedido="<?php echo $idPedido; ?>">
                                 <?php
                                 foreach ($estados as $est) {
                                     $selected = ($est["id"] == $row["id_estado"]) ? "selected" : "";
