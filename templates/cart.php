@@ -22,7 +22,7 @@ if (!isset($_SESSION['username']) || !$_SESSION['username']) {
     <link rel="shortcut icon" href="../extras/logos/arepa.png" type="image/x-icon">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="self-css/cart.css">
+    <link rel="stylesheet" href="self-css/centerTable.css">
     <link rel="stylesheet" href="self-css/general.css">
     <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <!-- Custom JS -->

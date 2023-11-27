@@ -24,6 +24,7 @@ $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,15 +38,16 @@ $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="self-css/general.css">
-    <link rel="stylesheet" href="self-css/pedidos.css">
+    <link rel="stylesheet" href="self-css/centerTable.css">
     <link rel="stylesheet" href="../static/css/bg-dotted.css">
     <!-- Custom JS -->
     <script src="../static/js/admin.js" defer></script>
-    
+
     <title>Sabor Caro | Admin</title>
 </head>
+
 <body class="bg-dotted">
-<div class="sticky-header">
+    <div class="sticky-header">
         <div class="line-1">
             <p class="col-white text-bold">Precios baratos, sabor Caro y Colombiano <i class="fa fa-diamond"></i></p>
         </div>
@@ -73,57 +75,56 @@ $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <main>
         <h2 class="col-white text-bold">Panel de administración</h2>
         <div class="table-responsive">
-        <table class="table table-borderless table-dark">
-            <thead class="table-active">
-                <tr>
-                <th scope="col">ID del pedido</th>
-                <th scope="col">Entregado a:</th>
-                <th scope="col">Dirección del pedido:</th>
-                <th scope="col">Estado del pedido:</th>
-                <th scope="col">Valor del pedido</th>
-                <th scope="col">Productos</th>
-                </tr>
-            </thead>
-            <tbody id="cartBody">
-            <?php
-            foreach ($result as $row) {
-                $idPedido = $row['id'];
+            <table class="table table-borderless table-dark">
+                <thead class="table-active">
+                    <tr>
+                        <th scope="col">ID del pedido</th>
+                        <th scope="col">Entregado a:</th>
+                        <th scope="col">Dirección del pedido:</th>
+                        <th scope="col">Estado del pedido:</th>
+                        <th scope="col">Valor del pedido</th>
+                        <th scope="col">Productos</th>
+                    </tr>
+                </thead>
+                <tbody id="cartBody">
+                    <?php
+                    foreach ($result as $row) {
+                        $idPedido = $row['id'];
 
-                $query = 'SELECT pp.`id_pedido`, p.`nombre` as nombre
+                        $query = 'SELECT pp.`id_pedido`, p.`nombre` as nombre
                 FROM `tbl_productos_pedido` pp
                 JOIN `tbl_productos` p ON pp.`id_producto` = p.`id`
                 WHERE pp.`id_pedido` = :idPedido';
-                $stmt = $pdo->prepare($query);
-                $stmt->bindParam(':idPedido', $idPedido, PDO::PARAM_INT);
-                $stmt->execute();
-                $resultProd = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        $stmt = $pdo->prepare($query);
+                        $stmt->bindParam(':idPedido', $idPedido, PDO::PARAM_INT);
+                        $stmt->execute();
+                        $resultProd = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                echo "<tr>
+                        echo "<tr>
                         <th scope='row'>" . $idPedido . "</th>
                         <td>" . $row['nombre_entregar'] . "</td>
                         <td>" . $row['direccion'] . "</td>
                         <td>"; ?>
-                            <select name='estado' class="changers form-select" data-idpedido="<?php echo $idPedido; ?>">
-                                <?php
-                                foreach ($estados as $est) {
-                                    $selected = ($est["id"] == $row["id_estado"]) ? "selected" : "";
-                                    echo "<option value='{$est['id']}' $selected>{$est['nombre']}</option>";
-                                }
-                                ?>
-                            </select>
+                        <select name='estado' class="changers form-select" data-idpedido="<?php echo $idPedido; ?>">
+                            <?php
+                            foreach ($estados as $est) {
+                                $selected = ($est["id"] == $row["id_estado"]) ? "selected" : "";
+                                echo "<option value='{$est['id']}' $selected>{$est['nombre']}</option>";
+                            }
+                            ?>
+                        </select>
                         </td>
-                        <td>$<?php echo $row['valor_pedido']; ?></td> <td> <?php
+                        <td>$<?php echo $row['valor_pedido']; ?></td>
+                        <td> <?php
 
-                foreach ($resultProd as $rp) {
-                    echo "<p>" . $rp['nombre'] . "</p>";
-                }
-                echo "</td></tr>";
-            }
-            ?>
-            </tbody>
-        </table>
+                                foreach ($resultProd as $rp) {
+                                    echo "<p>" . $rp['nombre'] . "</p>";
+                                }
+                                echo "</td></tr>";
+                            }?>
+                </tbody>
+            </table>
         </div>
     </main>
-    
 </body>
 </html>

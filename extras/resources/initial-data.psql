@@ -37,3 +37,6 @@ INSERT INTO `tbl_productos`(`nombre`, `precio`, `id_tipo`) VALUES ('Arepa con ho
 INSERT INTO `tbl_productos`(`nombre`, `precio`, `id_tipo`) VALUES ('Queso rayado',2500,2);
 INSERT INTO `tbl_productos`(`nombre`, `precio`, `id_tipo`) VALUES ('Tocineta',2000,2);
 INSERT INTO `tbl_productos`(`nombre`, `precio`, `id_tipo`) VALUES ('Pepinillos',1500,2);
+
+
+--admin 1234 | ivern 123
