@@ -73,7 +73,6 @@ $adiciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <button class="btn btn-danger">Cerrar sesión</button>
                                 </form>
                             </li>
-
                         </ul>
                     </div>
                 </div>
