@@ -30,7 +30,6 @@ if (!isset($_SESSION['username']) || !$_SESSION['username']) {
     <script src="../static/js/clases.js" defer></script>
     <script src="../static/js/cart.js" defer></script>
 
-
     <title>Sabor Caro | Buycart</title>
 </head>
 <body class="bg-dotted">
