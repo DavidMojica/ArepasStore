@@ -91,7 +91,7 @@ $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($result as $row) {
                         $idPedido = $row['id'];
 
-                        $query = 'SELECT pp.`id_pedido`, p.`nombre` as nombre
+                        $query = 'SELECT pp.`id_pedido`,pp.`cantidad`, p.`nombre` as nombre
                 FROM `tbl_productos_pedido` pp
                 JOIN `tbl_productos` p ON pp.`id_producto` = p.`id`
                 WHERE pp.`id_pedido` = :idPedido';
@@ -118,7 +118,7 @@ $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td> <?php
 
                                 foreach ($resultProd as $rp) {
-                                    echo "<p>" . $rp['nombre'] . "</p>";
+                                    echo "<p>" .$rp['cantidad']." x ". $rp['nombre'] . "</p>";
                                 }
                                 echo "</td></tr>";
                             }?>
