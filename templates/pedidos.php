@@ -34,10 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $lastInsert = $pdo->lastInsertId();
 
     foreach($productos as $p){
-        $query = "INSERT INTO `tbl_productos_pedido`(`id_pedido`, `id_producto`) VALUES (:id_pedido,:id_producto)";
+        $query = "INSERT INTO `tbl_productos_pedido`(`id_pedido`, `id_producto`,`cantidad`) VALUES (:id_pedido,:id_producto,:cantidad)";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":id_pedido", $lastInsert, PDO::PARAM_INT);
         $stmt->bindParam(":id_producto", $p['id'], PDO::PARAM_INT);
+        $stmt->bindParam(":cantidad",$p['cantidad'] ,PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -126,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             foreach ($result as $row) {
                 $idPedido = $row['id'];
 
-                $query = 'SELECT pp.`id_pedido`, p.`nombre` as nombre
+                $query = 'SELECT pp.`id_pedido`, pp.`cantidad`, p.`nombre` as nombre
                 FROM `tbl_productos_pedido` pp
                 JOIN `tbl_productos` p ON pp.`id_producto` = p.`id`
                 WHERE pp.`id_pedido` = :idPedido';
@@ -144,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <td>";
 
                 foreach ($resultProd as $rp) {
-                    echo "<p>" . $rp['nombre'] . "</p>";
+                    echo "<p>" .$rp['cantidad']." x ". $rp['nombre'] . "</p>";
                 }
                 echo "</td></tr>";
             }

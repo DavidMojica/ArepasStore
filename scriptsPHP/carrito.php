@@ -11,8 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $producto_id = $_POST['id'];
                 $cantidad = $_POST['cantidad'];
 
-                // Aquí puedes agregar la lógica necesaria para manejar el producto, como almacenarlo en el carrito.
-
                 // Ejemplo básico de almacenamiento en la sesión
                 $producto = array(
                     'id' => $producto_id,
@@ -35,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 foreach ($_SESSION['carrito'] as $key => $producto) {
                     if ($producto['id'] == $id) {
                         unset($_SESSION['carrito'][$key]);
-                        break; 
+                        break;
                     }
                 }
             }
@@ -49,19 +47,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 foreach ($_SESSION['carrito'] as &$producto) {
                     if ($producto['id'] == $producto_id) {
                         $producto['cantidad'] = $cantidad;
-                        break; 
+                        break;
                     }
                 }
             }
             break;
 
         case 4:
-            if(isset($_SESSION['carrito'])){
-                return_response(true,"ok", json_encode(array_values($_SESSION['carrito'])));
-            } else{
+            if (isset($_SESSION['carrito'])) {
+                return_response(true, "ok", json_encode(array_values($_SESSION['carrito'])));
+            } else {
                 return_response(false, "no", null);
             }
-            break; 
+            break;
 
         case 5:
             if (isset($_SESSION['carrito'])) {
