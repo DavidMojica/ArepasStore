@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-12-2023 a las 15:50:23
+-- Tiempo de generación: 11-12-2023 a las 18:53:06
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -57,15 +57,6 @@ CREATE TABLE `tbl_pedidos` (
   `valor_pedido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `tbl_pedidos`
---
-
-INSERT INTO `tbl_pedidos` (`id`, `nombre_entregar`, `direccion`, `id_user`, `id_estado`, `valor_pedido`) VALUES
-(12, 'Carla gomez', 'cra 12 a-22', 12, 2, 59000),
-(13, '', '', 14, 3, 18000),
-(14, 'pablo', '123cra2', 15, 4, 39000);
-
 -- --------------------------------------------------------
 
 --
@@ -112,19 +103,9 @@ INSERT INTO `tbl_productos` (`id`, `nombre`, `precio`, `id_tipo`) VALUES
 
 CREATE TABLE `tbl_productos_pedido` (
   `id_pedido` int(11) NOT NULL,
-  `id_producto` int(11) NOT NULL
+  `id_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `tbl_productos_pedido`
---
-
-INSERT INTO `tbl_productos_pedido` (`id_pedido`, `id_producto`) VALUES
-(12, 10),
-(12, 3),
-(13, 12),
-(13, 14),
-(14, 10);
 
 -- --------------------------------------------------------
 
@@ -259,7 +240,7 @@ ALTER TABLE `tbl_estados`
 -- AUTO_INCREMENT de la tabla `tbl_pedidos`
 --
 ALTER TABLE `tbl_pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_productos`
